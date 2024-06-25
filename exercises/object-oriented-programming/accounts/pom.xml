@@ -13,7 +13,7 @@
 
   <name>accounts</name>
 
-   <build>
+  <build>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -21,9 +21,9 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
             <testExcludes>
-              <!-- <testExclude>**/BankTest.java</testExclude>
-              <testExclude>**/CurrentAccountTest.java</testExclude>
-              <testExclude>**/SavingsAccountTest.java</testExclude> -->
+              <!-- <testExclude>**/BankTest.java</testExclude> -->
+              <!-- <testExclude>**/CurrentAccountTest.java</testExclude> -->
+              <!-- <testExclude>**/SavingsAccountTest.java</testExclude> -->
             </testExcludes>
           </configuration>
         </plugin>
