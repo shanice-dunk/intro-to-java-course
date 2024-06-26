@@ -1,7 +1,6 @@
 package com.cbfacademy;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -37,66 +36,69 @@ public class FlowControlExercises {
         int month = number;
         switch (month) {
             case 1:
-                System.out.println("January");
+                return "January";
             case 2:
-                System.out.println("February");        
+                return "February";
             case 3:
-                System.out.println("March");        
+                return "March";
             case 4:
-                System.out.println("April");
+                return "April";              
             case 5:
-                System.out.println("May");
+                return "May";
             case 6:
-                System.out.println("June");
+                return "June";
             case 7:
-                System.out.println("July");
+                return "July";
             case 8:
-                System.out.println("August");
+                return "August";
             case 9:
-                System.out.println("September");
+                return "September";
             case 10:
-                System.out.println("October");
+                return "October";
             case 11:
-                System.out.println("November");
+                return "November";
             case 12:
-                System.out.println("December");
+                return "December";
             default:
-                System.out.println("Invalid month number");
-                return number.toString();
+                return "Invalid month number";
         }  
     }
 
     public Map<String, Integer> sumOfOddsAndSumOfEvens() {
         //  for loop
         //  - creates and initialises a list of 100 numbers - from 1 to 100
-        HashMap<Integer, Integer> calculatedSumOfEvens = new HashMap<Integer, Integer>();
-        HashMap<Integer, Integer> calculatedSumOfOdds = new HashMap<Integer, Integer>();
+        // create one hashmap 
+        HashMap<String, Integer> sumOfOddsAndSumOfEvens = new HashMap<String, Integer>();
         int even = 0;
         int odd = 0;
         //  - determines the sum of all the even numbers in the list
         //  - determines the sum of all the odd numbers in the list
         for (int i = 1; i <= 100; i ++) {
             if (i % 2 == 0) {
-                even = even+i;
+                even += i;
             } else {
-                odd = odd+i;
+                odd += i;
             }
         }
         //  - returns a map with two entries:
-        System.out.println("SumOfEvens" + calculatedSumOfEvens);
-        System.out.println("SumOfOdds" + calculatedSumOfOdds);
         //      {"SumOfEvens", calculatedSumOfEvens}, {"SumOfOdds", calculatedSumOfOdds}
         // throw new RuntimeException("Not implemented");
-        return sumOfOddsAndSumOfEvens();
+        sumOfOddsAndSumOfEvens.put("SumOfEvens", even);
+        sumOfOddsAndSumOfEvens.put("SumOfOdds", odd);
+
+        System.out.print(sumOfOddsAndSumOfEvens);
+
+        return sumOfOddsAndSumOfEvens;
+        
     }
 
     public List<Integer> reverse(ArrayList<Integer> numbers) {
         //  - it takes an array list of integers
-        ArrayList<Integer> list = new ArrayList<>();
+        // ArrayList<Integer> list = new ArrayList<>();
         //  - it returns the list in reverse order
-        Collections.reverse(list);
+        Collections.reverse(numbers);
         // throw new RuntimeException("Not implemented");
-            return numbers;
+        return numbers;
     }
 
     public String getName() {
