@@ -19,4 +19,6 @@ public class BinarySearch implements Search {
         }
         return -1;
     }
+
+
 }
