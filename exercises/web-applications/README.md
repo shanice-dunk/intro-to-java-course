@@ -26,10 +26,14 @@ Analyse the following HTTP request:
 ```
 
 1. What is the requested URL?
+- /martignon/index.html
 2. Which version of HTTP is used?
+- HHTP 1.1
 3. Does the browser ask for a persistent or a non-persistent connection?
+- Persistent (keep-alive)
 4. What is, in your opinion, the utility in indicating the type (and version) of browser used by
 the client in the HTTP Request?
+- user agent - to allow a compatible response, helps with troubleshooting, helps in understanding the distribution of browsers and devices accessing the site
 
 **<ins>Exercise 2</ins>**
 
@@ -43,6 +47,8 @@ An HTTP client sends the following message:
 ```
 
 Write down two feasible responses of the HTTP server (only the status line)
+- HTTP/1.1 200 OK
+- HTTP/1.1 502 Bad Gateway
 
 ## :spider_web: HTML
 
