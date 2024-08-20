@@ -1,29 +1,42 @@
 package com.cbfacademy.accounts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bank extends Account {
     public Bank(int accountNumber, double balance) {
         super(accountNumber, balance);
-        //TODO Auto-generated constructor stub
     }
 
-// storing a internal list of accounts
-    Account acccount1 = new Account(847635, 1000);
-    Account account2 = new Account(123458, 3000);
-    Account account3 = new Account(987654, 50000);
-    Account account4 = new Account(467893, 7000);
-    Account account5 = new Account(585317, 6000);
-}
+private static List<Account> accountsList = new ArrayList<>();
+    public static void main(String[] args) {
+                // Add instances of each class to the list
+                accountsList.add(new Account(001, 1000.0));
+                accountsList.add(new SavingsAccount(002, 2000.0, 1.5));
+                accountsList.add(new CurrentAccount(003, 3000.0, 500.0));
+        
+                // Print the accounts in the list
+                for (Account account : accountsList) {
+                    System.out.println(account);
+                }
+            }
+        // Apply interest to savings account
+        private static void applyInterestToSavingsAccounts() {
+            for (Account account : accountsList) {
+                if (account instanceof SavingsAccount) {
+                    ((SavingsAccount) account).applyInterest();
+                    System.out.println("Interest applied to: " + account);
+                }
+            }
+        }
 
-// opening a new account, given a type and balance.
-
-// getting a list of account numbers held by the bank
-    
-
-// getting an account, given an account number
-
-// closing an account, given an account number
-// displaying a report of all accounts held by the bank
-// paying a dividend to all accounts held by the bank
-// applying interest to all savings accounts
-// contacting all current account holders if their account is in overdraft.
+        // Display a report of all accounts held by the bank
+        private static void displayReport() {
+            System.out.println("Bank Accounts Report");
+            for (Account account : accountsList) {
+                System.out.println(account);
+            }
+            System.out.println(" ");
+        }
+        }
 
