@@ -1,11 +1,16 @@
 package com.cbfacademy;
 
 public class Year {
-    public static String isLeap(int year) {
+    public boolean isLeap(int year) {
         // divisible by 400
         if (year % 400 == 0) {
-            return "Leap Year";
+            return true;
+        // divisible by 100
+        } else if (year % 200 == 0) {
+            return false;
+        } else {
+            return false;
         }
-        return null;
+        
     }
 }

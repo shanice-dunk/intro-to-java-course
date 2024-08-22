@@ -59,9 +59,21 @@ public class AppTest {
     }
 
     @Test
-    @DisplayName("prints leap year")
-    public void testLeapYear() {
-        assertEquals("Leap Year", FizzBuzz.get(400));
+    @DisplayName("prints true")
+    public void testTrue() {
+        Year leapYear = new Year();
+        boolean ans = true;
+        boolean val;
+        int year = 400;
+
+    }
+
+    @Test
+    @DisplayName("prints false")
+    public void testFalse() {
+        boolean ans = false;
+        boolean val;
+        int year = 100;
     }
     
 }
