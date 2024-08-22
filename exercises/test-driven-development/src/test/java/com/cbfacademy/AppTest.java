@@ -1,9 +1,16 @@
 package com.cbfacademy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.function.BooleanSupplier;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -58,23 +65,36 @@ public class AppTest {
         assertEquals("14", FizzBuzz.get(14));
     }
 
-    @Test
-    @DisplayName("prints true")
-    public void testTrue() {
-        Year leapYear = new Year();
-        boolean ans = true;
-        boolean val;
-        int year = 400;
+//     @Test
+//     @DisplayName("prints true")
+//     public void leapYear400() {
+//         int year = 2000; // example year
+//         assertTrue(Year.isLeap(year));
+// }
+//     @Test
+//     @DisplayName("1700 is not a leap year")
+//     public void leapYear1700() {
+//         assertEquals(false, Year.isLeap(1700));
+//     }
 
-    }
+static Stream<Arguments> inputAndOutputProvider() {
+    return Stream.of(
+        Arguments.of(1600, true),
+        Arguments.of(1700, false)
 
-    @Test
-    @DisplayName("prints false")
-    public void testFalse() {
-        boolean ans = false;
-        boolean val;
-        int year = 100;
-    }
+    );
+    
+}
+
+@ParameterizedTest
+@MethodSource("inputAndOutputProvider")
+@DisplayName("Determine whether leap year or not")
+public void returnExpectedValue(Integer number, Boolean expected) {
+    final Year year = new Year(number);
+    assertThat(year.isLeap(0), is(expected));
+}
+
+    
     
 }
 
